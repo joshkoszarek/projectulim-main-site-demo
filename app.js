@@ -80,8 +80,8 @@ const menuIcon = document.querySelector(".menu-icon");
 const signOutBtn = document.querySelector(".sign-out-standard");
 const signupBtn = document.querySelector("#sign-in-press");
 const theLogin = document.querySelector(".login");
-const loginStatus = localStorage.getItem("loginStatus");
-const loggedOut = localStorage.getItem("loggedOut");
+const loginStatus = sessionStorage.getItem("loginStatus");
+const loggedOut = sessionStorage.getItem("loggedOut");
 const bigSignIn = document.getElementById("big-sign-up");
 const bigLogin = document.getElementById("big-login");
 const bigBtnContainer = document.querySelector(".sign-in-option-big-btns");
@@ -115,8 +115,8 @@ loginBtn.addEventListener("click", () => {
 */
 signOutBtn.addEventListener("click", () => {
   console.log("hi");
-  localStorage.removeItem("loginStatus");
-  localStorage.clear;
+  sessionStorage.removeItem("loginStatus");
+  sessionStorage.clear;
   //localStorage.setItem("loggedOut", "out");
   profilePic.classList.toggle("logged-in");
   loggedInMenu.classList.toggle("logged-in");
@@ -140,6 +140,6 @@ profilePic.addEventListener("click", () => {
 });
 loginBtn.addEventListener("click", () => {
   console.log("clicked");
-  localStorage.removeItem("loggedOut");
-  localStorage.setItem("loginStatus", "in");
+  sessionStorage.removeItem("loggedOut");
+  sessionStorage.setItem("loginStatus", "in");
 });
